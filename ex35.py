@@ -1,81 +1,70 @@
 from sys import exit
 
+
 def gold_room():
-    print("This room is full of gold.  How much do you take?")
+    print("This room is full of gold. How much do you take?")
 
     choice = input("> ")
-    if choice <= 2 :
+    if "0" in choice or "1" in choice:
         how_much = int(choice)
     else:
-        dead("Man, learn to type your numbers.")
+        dead("Man, learn to type a number.")
 
-    if how_much <= 50:
-        print("Nice you are not greedy, you win!")
-    elif how_much > 50:
-        dead
+    if how_much < 50:
+        print("Nice, you're not greedy, you win!")
         exit(0)
     else:
         dead("You greedy bastard!")
 
 
 def bear_room():
-    print("There is a bear here.")
+    print("There is bear here.")
     print("The bear has a bunch of honey.")
-    print("The fat bear is infront of another door.")
-    print("How are you going to move the bear? ")
-    print("""
-    A. Take honey
-    B. Taunt bear
-    \n a or b
-    """)
+    print("The fat bear is in front of another door.")
+    print("How are you going to move the bear?")
     bear_moved = False
 
     while True:
         choice = input("> ")
 
-        if choice == "a":
+        if choice == "take honey":
             dead("The bear looks at you then slaps your face off.")
-        elif choice == "b" and not bear_moved:
+        elif choice == "taunt bear" and not bear_moved:
             print("The bear has moved from the door.")
-            print("you can now go through.")
+            print("You can go through it now.")
             bear_moved = True
-        elif choice == "b" and bear_moved:
-            dead("The bear gets pissed off and eats your legs.") 
-        elif choice == "yes" and bear_moved:
-            print("do you open the door written Gold Room??")
+        elif choice == "taunt bear" and bear_moved:
+            dead("The bear gets pissed off and chews your leg off.")
+        elif choice == "open door" and bear_moved:
             gold_room()
         else:
-            print(" have no idea what that means.")
+            print("I got no idea what that means.")
 
 
 def cthulhu_room():
-    print("Here you see the great evil Medusa")
-    print("She, it, whatever hears a sound and turns around.")
-    print("Do you get scared and run or try get a glimpse of her face before you get out ??")
-    print("""
-    A. Run without looking back
-    B. Peek first
-    \n a or b ?
-   """ )
+    print("Here you see the great evil Cthulhu.")
+    print("He, it, whatever stares at you and you go insane.")
+    print("Do you flee for your life or eat your head?")
 
     choice = input("> ")
 
-    if "a" in choice:
+    if "flee" in choice:
         start()
-    elif "b" in choice:
-        dead("You immediately start turning into concrete ")
+    elif "head" in choice:
+        dead("Well that was tasty!")
     else:
         cthulhu_room()
 
 
 def dead(why):
-    print(why, "\nGame over!")
+    print(why, "Good job!")
     exit(0)
+
 
 def start():
     print("You are in a dark room.")
-    print("There is a door to your right and  left.")
-    print("which one do you take? ")
+    print("There is a door to your right and left.")
+    print("Which one do you take?")
 
     choice = input("> ")
 
@@ -84,11 +73,7 @@ def start():
     elif choice == "right":
         cthulhu_room()
     else:
-        dead("You stumble around the room till you starve.")
+        dead("You stumble around the room until you starve.")
 
 
 start()
-
-
-
-
