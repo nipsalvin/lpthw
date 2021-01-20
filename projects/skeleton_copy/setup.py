@@ -6,8 +6,8 @@ except ImportError:
 config = {
     'description': 'My Project',
     'author': 'Pinpin',
-    'url': 'https://github.com/nipsalvin/lpthw',
-    'download_url': 'https://github.com/nipsalvin/lpthw',
+    'url': 'URL to get it at',
+    'download_url': 'Where to download it.',
     'author_email': 'My email',
     'version': '0.1',
     'install_requirements': ['nose'],
