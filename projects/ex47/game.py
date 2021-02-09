@@ -2,11 +2,12 @@ class Room(object):
 
     def __init__(self, name, description):
         self.name = name
-        self.description = description
-        self.paths = {}
+        sself.description = description
+        self.path = []
 
     def go(self, direction):
-        return self.paths.get(direction, None)
+        return self.path.get(direction, None)
 
-    def add_paths(self, paths):
-        self.path.update(paths)
+    def add_path(self, path):
+        self.paths.update(paths)
+        
