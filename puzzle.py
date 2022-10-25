@@ -3,9 +3,9 @@ from sys import exit
 
 
 def gold_room():
-    print("You enter in a room full of gold. How much do you take?")
+    print("You enter in a room full of gold. How many Kilos do you take?")
 
-    choice = input("How many Kilos (1 - 100) \n> ")
+    choice = input("(1 - 100) kilos \n> ")
     if "0" in choice or "1" in choice:
         how_much = int(choice)
     else:
