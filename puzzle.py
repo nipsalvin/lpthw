@@ -29,11 +29,11 @@ Type B if you choose to taunt the bear.""")
     bear_moved = False
 
     while True:
-        choice = input("> ")
+        choice = str(input("> "))
 
-        if choice == "a":
+        if choice.lower() == "a":
             dead("The bear looks at you then slaps your face off.")
-        elif choice == "b" and not bear_moved:
+        elif choice.lower() == "b" and not bear_moved:
             print("The bear has moved from the door.")
             print("You can go through it now.\n")
             print("The bear moves slowly then stops and sits to continue eating the honey.")
@@ -42,10 +42,10 @@ Type B if you choose to taunt the bear.""")
             bear_moved = True
 
 
-        elif choice == "a" and bear_moved:
+        elif choice.lower() == "a" and bear_moved:
             dead("You taunt the already leaving bear again."
             "The bear gets pissed off and chews your leg off.")
-        elif choice == "b" and bear_moved:
+        elif choice.lower() == "b" and bear_moved:
             gold_room()
         else:
             print("Please pick 'A' or 'B'.")
@@ -57,11 +57,11 @@ def medusa_room():
     print("Do you flee for your life or try see what kind of evil she is?")
     
     print("Type A if you choose to flee. Type B if you choose to look ")
-    choice = input("> ")
+    choice = str(input("> "))
 
-    if "a" in choice:
+    if "a" in choice.lower():
         start()
-    elif "b" in choice:
+    elif "b" in choice.lower():
         dead("Your legs start to turn into concrete as soon as you see her face.\nYou watch yourself slowly turn into stone as she slithers closer to devour you.")
     else:
         medusa_room()
@@ -77,11 +77,11 @@ def start():
     print("Which one do you take?")
     print("Choose A for left and B for right")
 
-    choice = input("> ")
+    choice = str(input("> "))
 
-    if choice == "a":
+    if choice.lower() == "a":
         bear_room()
-    elif choice == "b":
+    elif choice.lower() == "b":
         medusa_room()
     else:
         dead("Too slow, the spider got you")
